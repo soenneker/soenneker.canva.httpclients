@@ -11,7 +11,6 @@ using Soenneker.Utils.HttpClientCache.Abstract;
 
 namespace Soenneker.Canva.HttpClients;
 
-///<inheritdoc cref="ICanvaOpenApiHttpClient"/>
 public sealed class CanvaOpenApiHttpClient : ICanvaOpenApiHttpClient
 {
     private readonly IHttpClientCache _httpClientCache;
