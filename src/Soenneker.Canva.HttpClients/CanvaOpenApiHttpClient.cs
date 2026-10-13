@@ -29,7 +29,7 @@ public sealed class CanvaOpenApiHttpClient : ICanvaOpenApiHttpClient
     {
         return _httpClientCache.Get(nameof(CanvaOpenApiHttpClient), (config: _config, baseUrl: _config["Canva:ClientBaseUrl"] ?? _prodBaseUrl), static state =>
         {
-            var apiKey = state.config.GetValueStrict<string>("Canva:AccessToken");
+            var apiKey = state.config.GetStringStrict("Canva:AccessToken");
             string authHeaderName = state.config["Canva:AuthHeaderName"] ?? "Authorization";
             string authHeaderValueTemplate = state.config["Canva:AuthHeaderValueTemplate"] ?? "Bearer {token}";
             string authHeaderValue = authHeaderValueTemplate.Replace("{token}", apiKey, StringComparison.Ordinal);
